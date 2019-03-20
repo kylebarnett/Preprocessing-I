@@ -57,9 +57,18 @@ html, body {
     height: 100%;
 }
 
+@h1-font-size: 36px;
+@h3-font-size: 24px;
+@line-height: 1.4;
+
 .container {
 	max-width: 1240px;
 	margin: 0 auto;
+
+	@media(max-width: 500px) {
+		max-width: 95%;
+		margin: 0 auto
+	}
 }
 
 header {
@@ -76,12 +85,16 @@ header {
 	display: flex;
 	width: 75%;
 	justify-content: space-between;
-}
 
-.top-nav .top-nav-a {
-	font-size: 18px;
-	color: black;
-	text-decoration: none;
+	.top-nav-a {
+		font-size: 18px;
+		color: black;
+		text-decoration: none;
+	}
+
+	@media(max-width: 500px){
+		width: 60%;
+	}
 }
 
 .jumbo-picture {
@@ -89,31 +102,60 @@ header {
 	margin-bottom: 25px;
 }
 
+.main-body {
+	min-height: 100vh
+}
+
 .main-content {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 25px;
 	width: 100%;
-}
 
-.work-history {
-	width: 45%;
-	padding: 10px;
-	border: 1px solid black;
+	@media(max-width: 500px){
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.work-history {
+		width: 45%;
+		padding: 10px;
+		border: 1px solid black;
+
+		@media(max-width: 500px) {
+			width: 100%
+		}
+	}
+
+	@media(max-width: 500px){
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	}
 }
 
 .about-me {
 	width: 45%;
 	padding: 10px;
 	border: 1px solid black;
+
+	@media(max-width: 500px) {
+		width: 100%;
+	}
 }
 
 h1 {
-	font-size: 36px;
+	font-size: @h1-font-size;
 	margin-bottom: 15px;
 }
 
+h3 {
+	font-size: @h3-font-size;
+}
+
 p {
-	line-height: 1.4;
+	line-height: @line-height;
 }
 
 ul li {
@@ -123,4 +165,45 @@ ul li {
 
 .list {
 	margin-bottom: 15px;
+	line-height: @line-height;
 }
+
+.skills-header {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+} 
+
+.skills {
+	display: flex;
+	justify-content: space-around;
+	min-height: 100%;
+
+	.tangible-skill {
+		display: flex;
+		align-items: center;
+		border: 1px solid black;
+		justify-content: center;
+		width: 150px;
+		height: 150px;
+	}
+
+	@media(max-width: 500px){
+		margin-bottom: 25px;
+	}
+}
+
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+	background-color: black;
+
+	.footer-text {
+		color: white;
+	}
+}
+
